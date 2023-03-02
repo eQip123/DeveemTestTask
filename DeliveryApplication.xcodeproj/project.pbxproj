@@ -11,6 +11,11 @@
 		1CD5FE1729B06F3B00E8A364 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD5FE1629B06F3B00E8A364 /* ContentView.swift */; };
 		1CD5FE1929B06F3C00E8A364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD5FE1829B06F3C00E8A364 /* Assets.xcassets */; };
 		1CD5FE1C29B06F3C00E8A364 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD5FE1B29B06F3C00E8A364 /* Preview Assets.xcassets */; };
+		1CD5FE2529B0721000E8A364 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CD5FE2429B0721000E8A364 /* Poppins-Bold.ttf */; };
+		1CD5FE2729B0726000E8A364 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CD5FE2629B0726000E8A364 /* Poppins-Light.ttf */; };
+		1CD5FE2929B072B800E8A364 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CD5FE2829B072B700E8A364 /* Poppins-Regular.ttf */; };
+		1CD5FE2B29B072C100E8A364 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CD5FE2A29B072C100E8A364 /* Poppins-Medium.ttf */; };
+		1CD5FE2D29B0730100E8A364 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CD5FE2C29B0730100E8A364 /* Poppins-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,12 @@
 		1CD5FE1629B06F3B00E8A364 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1CD5FE1829B06F3C00E8A364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CD5FE1B29B06F3C00E8A364 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1CD5FE2429B0721000E8A364 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		1CD5FE2629B0726000E8A364 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		1CD5FE2829B072B700E8A364 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		1CD5FE2A29B072C100E8A364 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		1CD5FE2C29B0730100E8A364 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		1CD5FE2E29B0750400E8A364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +62,8 @@
 		1CD5FE1329B06F3B00E8A364 /* DeliveryApplication */ = {
 			isa = PBXGroup;
 			children = (
+				1CD5FE2E29B0750400E8A364 /* Info.plist */,
+				1CD5FE2229B0716A00E8A364 /* SupportedFiles */,
 				1CD5FE1429B06F3B00E8A364 /* DeliveryApplicationApp.swift */,
 				1CD5FE1629B06F3B00E8A364 /* ContentView.swift */,
 				1CD5FE1829B06F3C00E8A364 /* Assets.xcassets */,
@@ -65,6 +78,26 @@
 				1CD5FE1B29B06F3C00E8A364 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1CD5FE2229B0716A00E8A364 /* SupportedFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1CD5FE2329B0717700E8A364 /* Fonts */,
+			);
+			path = SupportedFiles;
+			sourceTree = "<group>";
+		};
+		1CD5FE2329B0717700E8A364 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1CD5FE2429B0721000E8A364 /* Poppins-Bold.ttf */,
+				1CD5FE2629B0726000E8A364 /* Poppins-Light.ttf */,
+				1CD5FE2829B072B700E8A364 /* Poppins-Regular.ttf */,
+				1CD5FE2A29B072C100E8A364 /* Poppins-Medium.ttf */,
+				1CD5FE2C29B0730100E8A364 /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CD5FE1C29B06F3C00E8A364 /* Preview Assets.xcassets in Resources */,
+				1CD5FE2D29B0730100E8A364 /* Poppins-SemiBold.ttf in Resources */,
+				1CD5FE2529B0721000E8A364 /* Poppins-Bold.ttf in Resources */,
 				1CD5FE1929B06F3C00E8A364 /* Assets.xcassets in Resources */,
+				1CD5FE2B29B072C100E8A364 /* Poppins-Medium.ttf in Resources */,
+				1CD5FE2729B0726000E8A364 /* Poppins-Light.ttf in Resources */,
+				1CD5FE2929B072B800E8A364 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +308,7 @@
 				DEVELOPMENT_TEAM = W9K6KM23SM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeliveryApplication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +338,7 @@
 				DEVELOPMENT_TEAM = W9K6KM23SM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeliveryApplication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
