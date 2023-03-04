@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct SplashScreenView: View {
-    @State private var isActive = false
+    @StateObject private var viewModel = SplashScreenViewModel()
+    
     var body: some View {
-        if isActive {
-            ContentView()
+        if !viewModel.isActive {
+            HomeView()
         } else {
             ZStack {
                 Image("splashBackground")
@@ -21,14 +22,11 @@ struct SplashScreenView: View {
                 content
             }
             .onAppear() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    withAnimation {
-                        self.isActive = true
-                    }
-                }
+                viewModel.startAnimation()
             }
         }
     }
+    
     var content: some View {
         VStack() {
             HStack {
