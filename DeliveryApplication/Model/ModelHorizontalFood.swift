@@ -6,17 +6,15 @@
 //
 
 import SwiftUI
-struct ModelCard: Identifiable {
+struct ModelHorizontalFood: Identifiable {
     let id: Int
     let img: String
     let name: String
     let restaraunt: String
-    let price: String
 }
 struct ModelListFood: Identifiable {
     let id: Int
     let img: String
     let name: String
     let restaraunt: String
-    let price: String
 }

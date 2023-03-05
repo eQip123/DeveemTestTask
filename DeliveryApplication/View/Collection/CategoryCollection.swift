@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct CategoryCollectionView: View {
+struct CategoryCollection: View {
     let categoryModel: ModelCategory
     @StateObject private var viewModel = ViewModelHome()
     @Binding var selectedCategory: ModelCategory?

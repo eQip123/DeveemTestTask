@@ -10,25 +10,31 @@ import SwiftUI
 struct HomeView: View {
     @StateObject private var viewModel = ViewModelHome()
     @State private var showManasView = false
-
+    
     
     var body: some View {
-        
-        VStack {
-            header
-            categoriesBody
-            stores
-            searchTextField
-            cardViews
-            listFood
-            Spacer()
+        ZStack {
+            ScrollView{
+                VStack {
+                    header
+                    categoriesBody
+                    stores
+                    searchTextField
+                    cardViews
+                    listFood
+                }
+                .padding(.bottom, 100)
+
+            }
+            .background(Color.whiteColor)
+            if showManasView {
+                ChooseDelivery()
+                    .ignoresSafeArea(.all)
+                    .background(Color.black.opacity(0.65))
+                    .transition(.opacity)
+            }
             CustomTabBar(selectedTab: $viewModel.selectedTab)
                 .padding(.bottom, 2)
-        }
-        .edgesIgnoringSafeArea(.bottom)
-        .background(Color.whiteColor)
-        .fullScreenCover(isPresented: $showManasView) {
-            ManasView()
         }
     }
     
@@ -43,10 +49,12 @@ struct HomeView: View {
             VStack(alignment: .center, spacing: 3) {
                 Text("Delivering to")
                     .font(.custom(Poppins.regular.rawValue, size: 12))
-                    .foregroundColor(.blackAlpha)
+                    .foregroundColor(.blackAlpha50)
                 HStack(alignment: .center) {
                     Button(action: {
-                        showManasView = true
+                        withAnimation(.default) {
+                            showManasView.toggle()
+                        }
                     }) {
                         Text("Manas Ave")
                             .font(.custom(Poppins.medium.rawValue, size: 16))
@@ -62,16 +70,15 @@ struct HomeView: View {
             Spacer()
             
             ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .frame(width: 50, height: 47)
-                    .foregroundColor(.white)
-                    .shadow(color: .blackColor, radius: 4, y: 4)
                 VStack {
                     Button(action: {}) {
-                        Image("basket")
-                            .padding()
-                            .background(.black)
-                            .cornerRadius(15)
+                        VStack {
+                            Image("basket")
+                                .padding()
+                                .background(.black)
+                                .cornerRadius(15)
+                            
+                        }
                     }
                 }
             }
@@ -84,7 +91,7 @@ struct HomeView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(alignment: .center, spacing: 14) {
                 ForEach(viewModel.categories, id: \.self) { category in
-                    CategoryCollectionView(categoryModel: category, selectedCategory: $viewModel.selectedCategory)
+                    CategoryCollection(categoryModel: category, selectedCategory: $viewModel.selectedCategory)
                 }
             }
             .frame(height: 65)
@@ -107,7 +114,7 @@ struct HomeView: View {
                     .padding(.leading, 11)
                 TextField("Find restaurant by name ", text: $viewModel.search)
                     .font(.custom(Poppins.regular.rawValue, size: 12))
-                    .foregroundColor(.blackAlpha)
+                    .foregroundColor(.blackAlpha50)
             }
             .frame(height: 55)
             .background(Color.white)
@@ -124,106 +131,23 @@ struct HomeView: View {
     var cardViews: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack() {
-                ForEach(viewModel.cardModels) { card in
-                    CardViews(cards: card)
+                ForEach(viewModel.horizontalFood) { card in
+                    HorizontalFood(cards: card)
                 }
             }
         }
     }
     var listFood: some View {
-        List() {
+        ScrollView(.vertical, showsIndicators: false) {
             ForEach(viewModel.listProducts) { foods in
                 ListFood(list: foods)
             }
-            .listRowBackground(
-                RoundedRectangle(cornerRadius: 30)
-                    .fill(Color.white)
-            )
-            
         }
-        .scrollIndicators(.hidden)
-        .padding(.trailing, 73)
-    }
-    var menu: some View {
-        ZStack {
-  
-        }
+        .padding(.vertical, 5.7)
     }
 }
 
-struct CardViews: View {
-    let cards: ModelCard
-    var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(cards.name)
-                .font(.custom(Poppins.bold.rawValue, size: 16))
-            Text(cards.restaraunt)
-                .font(.custom(Poppins.light.rawValue, size: 10))
-                .foregroundColor(.grayColor)
-            Text("Delivery: FREE • Min: $20")
-                .foregroundColor(.gray)
-                .font(.custom(Poppins.light.rawValue, size: 10))
-            HStack(spacing: 3) {
-                Image("Vector")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 10, height: 10)
-                Text("4.5")
-                Text("•")
-                    .foregroundColor(.grayColor)
-                Image("time")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 9, height: 9)
-                Text("35 Mins")
-            }
-            .padding(.top, 3.5)
-            .font(.custom(Poppins.bold.rawValue, size: 12))
-            .padding(.horizontal, 12)
-        }
-        .padding(15)
-        .frame(width: 160, height: 180, alignment: .bottom)
-        .background(Color.white)
-        .cornerRadius(30)
-        .frame(height: 240, alignment: .bottom)
-        .overlay(
-            Image(cards.img)
-                .frame(width: 150, height: 150)
-                .clipShape(Circle())
-                .shadow(color: .blackAlpha20, radius: 2.5, x: 0, y: 10),
-            alignment: .top
-        )
-        .padding(.top, 10)
-        .padding(.horizontal, 17)
-    }
-}
-struct ListFood: View {
-    let list: ModelListFood
-    var body: some View {
-        ZStack(alignment: .trailing) {
-            Image(list.img)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 120, height: 120)
-                .cornerRadius(100)
-                .shadow(color: .blackAlpha20, radius: 2.5, x: 0, y: 10)
-        }
-        //            .padding(.leading, 17)
-        
-    }
-}
 
-struct ManasView: View {
-    var body: some View {
-        ZStack {
-            Color.white
-                .frame(width: 375, height: 488)
-                .cornerRadius(20)
-                .shadow(color: .black, radius: 5, x: 0, y: 3)
-            // Add your content here
-        }
-    }
-}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()

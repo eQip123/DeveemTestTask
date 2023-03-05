@@ -25,14 +25,14 @@ class ViewModelHome: ObservableObject {
         .init(title: "Offer", image: Image("offer"), imageWhite: Image("offerWhite"))
     ]
     
-    var cardModels: [ModelCard] = [
-        .init(id: 1, img: "food1", name: "Tony Roma’s", restaraunt: "Ribs & Steaks", price: "$20"),
-        .init(id: 2, img: "food2", name: "McDonald's", restaraunt: "Burgers & Fries", price: "$10"),
-        .init(id: 3, img: "food1", name: "Tony Roma’s", restaraunt: "Ribs & Steaks", price: "$20"),
-        .init(id: 4, img: "food2", name: "McDonald's", restaraunt: "Burgers & Fries", price: "$10")
+    var horizontalFood: [ModelHorizontalFood] = [
+        .init(id: 1, img: "food1", name: "Tony Roma’s", restaraunt: "Ribs & Steaks"),
+        .init(id: 2, img: "food2", name: "Momos", restaraunt: "Burgers & Fries"),
+        .init(id: 3, img: "food1", name: "Tony Roma’s", restaraunt: "Ribs & Steaks"),
+        .init(id: 4, img: "food2", name: "Momos", restaraunt: "Burgers & Fries")
     ]
     var listProducts: [ModelListFood] = [
-        .init(id: 1, img: "food3", name: "Tony Roma’s", restaraunt: "Ribs & Steaks", price: "$20"),
-        .init(id: 2, img: "food2", name: "McDonald's", restaraunt: "Burgers & Fries", price: "$10")
+        .init(id: 1, img: "food3", name: "Paul", restaraunt: "French Pasta"),
+        .init(id: 2, img: "food2", name: "Momos", restaraunt: "Burgers & Fries")
     ]
 }
