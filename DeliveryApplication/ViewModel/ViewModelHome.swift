@@ -18,7 +18,7 @@ class ViewModelHome: ObservableObject {
     }
     
     let categories: [ModelCategory] = [
-        .init(title: "Delivery", image: Image("gg"), imageWhite: Image("group18")),
+        .init(title: "Delivery", image: Image("blackLines"), imageWhite: Image("whiteLines")),
         .init(title: "Takeaway", image: Image("takeAway"), imageWhite: Image("takeAwayWhite")),
         .init(title: "Catering", image: Image("bellService"), imageWhite: Image("bellWhite")),
         .init(title: "Curbside", image: Image("curbside"), imageWhite: Image("curbsideWhite")),
