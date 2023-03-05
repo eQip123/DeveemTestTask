@@ -13,23 +13,22 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            ScrollView{
-                VStack {
-                    header
-                    categoriesBody
-                    stores
-                    searchTextField
-                    cardViews
-                    listFood
-                }
-                .padding(.bottom, 100)
-
+            VStack {
+                header
+                categoriesBody
+                stores
+                searchTextField
+                cardViews
+                listFood
+                Spacer()
+                CustomTabBar(selectedTab: $viewModel.selectedTab)
+                    .padding(.bottom, 2)
             }
-            .scrollIndicators(.hidden)
+            .edgesIgnoringSafeArea(.bottom)
             .background(Color.whiteColor)
             if viewModel.showManasView {
                 ChooseDelivery()
-                    .ignoresSafeArea(.all)
+                    .edgesIgnoringSafeArea(.all)
                     .background(Color.black.opacity(0.65))
                     .transition(.opacity)
                     .onTapGesture {
@@ -37,14 +36,9 @@ struct HomeView: View {
                             viewModel.showManasView = false
                         }
                     }
-
             }
-            CustomTabBar(selectedTab: $viewModel.selectedTab)
-                .padding(.bottom, 2)
         }
-        
     }
-    
     var header: some View {
         HStack {
             Button(action: {}) {
