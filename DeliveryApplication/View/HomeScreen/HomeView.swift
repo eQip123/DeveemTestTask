@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel = ViewModelHome()
-    @State private var showManasView = false
     
     
     var body: some View {
@@ -26,16 +25,24 @@ struct HomeView: View {
                 .padding(.bottom, 100)
 
             }
+            .scrollIndicators(.hidden)
             .background(Color.whiteColor)
-            if showManasView {
+            if viewModel.showManasView {
                 ChooseDelivery()
                     .ignoresSafeArea(.all)
                     .background(Color.black.opacity(0.65))
                     .transition(.opacity)
+                    .onTapGesture {
+                        withAnimation {
+                            viewModel.showManasView = false
+                        }
+                    }
+
             }
             CustomTabBar(selectedTab: $viewModel.selectedTab)
                 .padding(.bottom, 2)
         }
+        
     }
     
     var header: some View {
@@ -53,7 +60,7 @@ struct HomeView: View {
                 HStack(alignment: .center) {
                     Button(action: {
                         withAnimation(.default) {
-                            showManasView.toggle()
+                            viewModel.showManasView.toggle()
                         }
                     }) {
                         Text("Manas Ave")

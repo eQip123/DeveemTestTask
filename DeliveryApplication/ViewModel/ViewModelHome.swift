@@ -12,7 +12,7 @@ class ViewModelHome: ObservableObject {
     @Published var selectedCategory: ModelCategory?
     @Published var isSelected = false
     @Published var search: String = ""
-    
+    @Published var showManasView = false
     init() {
         selectedCategory = categories.first
     }

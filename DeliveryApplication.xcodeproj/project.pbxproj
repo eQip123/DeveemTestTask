@@ -102,10 +102,8 @@
 			children = (
 				1CFE35F729B1DFAA0094EB9F /* SplashScreen */,
 				1C81CFC529B2657D006F8ACD /* CustomTab */,
-				1CD5FE1429B06F3B00E8A364 /* DeliveryApp.swift */,
-				1CD5FE1629B06F3B00E8A364 /* HomeView.swift */,
+				1C9992ED29B5326E00FC63DA /* HomeScreen */,
 				1C9992E429B4BEAE00FC63DA /* Collection */,
-				1C9992EB29B4E8AD00FC63DA /* ChooseDelivery.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +116,16 @@
 				1C9992E729B4BF8600FC63DA /* HorizontalFood.swift */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		1C9992ED29B5326E00FC63DA /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1CD5FE1429B06F3B00E8A364 /* DeliveryApp.swift */,
+				1CD5FE1629B06F3B00E8A364 /* HomeView.swift */,
+				1C9992EB29B4E8AD00FC63DA /* ChooseDelivery.swift */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		1CD5FE0829B06F3B00E8A364 = {
@@ -143,7 +151,6 @@
 				1C81CFBC29B2572A006F8ACD /* ViewModel */,
 				1C8A536F29B0CF4200783ADD /* View */,
 				1CD5FE2229B0716A00E8A364 /* SupportedFiles */,
-				1CD5FE1829B06F3C00E8A364 /* Assets.xcassets */,
 				1CD5FE1A29B06F3C00E8A364 /* Preview Content */,
 			);
 			path = DeliveryApplication;
@@ -164,6 +171,7 @@
 				1CD5FE2E29B0750400E8A364 /* Info.plist */,
 				1CD5FE2329B0717700E8A364 /* Fonts */,
 				1C81CFBD29B25848006F8ACD /* EnumsTab.swift */,
+				1CD5FE1829B06F3C00E8A364 /* Assets.xcassets */,
 				1C9992E929B4E86000FC63DA /* CustomRoundedCourner.swift */,
 			);
 			path = SupportedFiles;

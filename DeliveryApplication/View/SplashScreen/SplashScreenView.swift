@@ -11,7 +11,7 @@ struct SplashScreenView: View {
     @StateObject private var viewModel = SplashScreenViewModel()
     
     var body: some View {
-        if !viewModel.isActive {
+        if viewModel.isActive {
             HomeView()
         } else {
             ZStack {
